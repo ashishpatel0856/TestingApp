@@ -6,17 +6,19 @@ phases:
       java: corretto21
   build:
     commands:
-      - echo Building, Testing and packaging the application...
+      - echo "Building, Testing and packaging the application..."
       - mvn package -DskipTests
-      - echo Listing target folder contents:
+      - echo "Listing target folder contents:"
       - ls -l target/
   post_build:
     commands:
-      - echo Build, Testing and packaging completed.
+      - echo "Build, Testing and packaging completed."
+
 artifacts:
   files:
-    - target/*.jar
+    - target/TestingApp-0.0.1-SNAPSHOT.jar
   discard-paths: yes
+
 cache:
   paths:
     - '/root/.m2/**/**'
