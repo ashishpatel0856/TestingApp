@@ -2,12 +2,14 @@ version: 0.2
 
 phases:
   install:
-    runtime-version:
+    runtime-versions:
       java: corretto21
   build:
     commands:
       - echo Building, Testing and packaging the application...
       - mvn package -DskipTests
+      - echo Listing target folder contents:
+      - ls -l target/
   post_build:
     commands:
       - echo Build, Testing and packaging completed.
