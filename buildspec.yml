@@ -6,13 +6,11 @@ phases:
       java: corretto21
   build:
     commands:
-      - echo "Building, Testing and packaging the application..."
-      - mvn package -DskipTests
-      - echo "Listing target folder contents:"
-      - ls -l target/
+      - echo Building, Testing and packaging the application...
+      - mvn package
   post_build:
     commands:
-      - echo "Build, Testing and packaging completed."
+      - echo Build, Testing and packaging completed.
 
 artifacts:
   files:
